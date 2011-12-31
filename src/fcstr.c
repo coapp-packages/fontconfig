@@ -22,6 +22,7 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
+#undef UNICODE // FIXME: How is this being defined?
 #include "fcint.h"
 #include <stdlib.h>
 #include <ctype.h>

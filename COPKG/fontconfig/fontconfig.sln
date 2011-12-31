@@ -12,6 +12,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fc-glyphname", "fc-glyphnam
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fc-arch", "fc-arch\fc-arch.vcxproj", "{6570F443-8499-4DA7-A437-63E2BF8C2868}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib", "lib\lib.vcxproj", "{A7F50806-35E3-4347-90CA-CD4479ACB10D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6570F443-8499-4DA7-A437-63E2BF8C2868} = {6570F443-8499-4DA7-A437-63E2BF8C2868}
+		{429A2394-C779-48E2-85A6-26D203647150} = {429A2394-C779-48E2-85A6-26D203647150}
+		{C6AB7DC0-DD4A-4D9A-86C4-5D920016F83B} = {C6AB7DC0-DD4A-4D9A-86C4-5D920016F83B}
+		{61AA3AC7-73C8-4B7D-9384-CFA98B017813} = {61AA3AC7-73C8-4B7D-9384-CFA98B017813}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -34,6 +42,10 @@ Global
 		{6570F443-8499-4DA7-A437-63E2BF8C2868}.Debug|Win32.Build.0 = Debug|Win32
 		{6570F443-8499-4DA7-A437-63E2BF8C2868}.Release|Win32.ActiveCfg = Release|Win32
 		{6570F443-8499-4DA7-A437-63E2BF8C2868}.Release|Win32.Build.0 = Release|Win32
+		{A7F50806-35E3-4347-90CA-CD4479ACB10D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A7F50806-35E3-4347-90CA-CD4479ACB10D}.Debug|Win32.Build.0 = Debug|Win32
+		{A7F50806-35E3-4347-90CA-CD4479ACB10D}.Release|Win32.ActiveCfg = Release|Win32
+		{A7F50806-35E3-4347-90CA-CD4479ACB10D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

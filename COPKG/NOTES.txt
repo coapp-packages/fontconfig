@@ -1,0 +1,7 @@
+Our freetype is missing the FT_Get_BDF_Property function. fontconfig warns on this (but that doesn't work because MSVC doesn't support #warning). We should figure out why we don't have it and why fontconfig should have it.
+
+The dll filename should be updated when LIBT_CURRENT and LIBT_AGE change in configure.in. It should be LIBT_CURRENT minus LIBT_AGE.
+
+fc-lang has a custom build step with a lot of .orth files. It should be updated based on fc-lang/Makefile.in.
+
+Supposedly we should build with Expat, but I haven't needed it. Am I missing a define?

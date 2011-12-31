@@ -7,8 +7,8 @@
 	packager: "Vincent Povirk <madewokherd@gmail.com>";
 }
 
-alias {
-	// We need bourne shell to build a few headers.
+sh-files {
+	// We need bourne shell to build a few files.
 
 	compiler: mingw;
 
@@ -16,14 +16,16 @@ alias {
 		"src/fcalias.h",
 		"src/fcaliastail.h",
 		"src/fcftalias.h",
-		"src/fcftaliastail.h"
+		"src/fcftaliastail.h",
+		"src/fontconfig.def"
 	};
 
 	build-command: @"
 		cd src
 		sh makealias ../src fcalias.h fcaliastail.h ../fontconfig/fontconfig.h ../src/fcdeprecate.h ../fontconfig/fcprivate.h
 		sh makealias ../src fcftalias.h fcftaliastail.h ../fontconfig/fontconfig.h ../src/fcdeprecate.h ../fontconfig/fcprivate.h
+		sh ../COPKG/makefontconfigdef.sh
 	";
 
-	clean-command: "del /S /Q /A - src/fcalias.h src/fcaliastail.h src/fcftalias.h src/fcftaliastail.h > nul 2>NUL";
+	clean-command: "del /S /Q /A - src/fcalias.h src/fcaliastail.h src/fcftalias.h src/fcftaliastail.h src/fontconfig.def > nul 2>NUL";
 }
