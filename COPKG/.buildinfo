@@ -1,0 +1,29 @@
+#product-info {
+	product-name: "fontconfig";
+	version: "2.8.0";
+	original-source-location: "git://anongit.freedesktop.org/fontconfig";
+	original-source-website: "http://www.freedesktop.org/wiki/Software/fontconfig";
+	license: "MIT/X11 License";
+	packager: "Vincent Povirk <madewokherd@gmail.com>";
+}
+
+alias {
+	// We need bourne shell to build a few headers.
+
+	compiler: mingw;
+
+	targets: {
+		"src/fcalias.h",
+		"src/fcaliastail.h",
+		"src/fcftalias.h",
+		"src/fcftaliastail.h"
+	};
+
+	build-command: @"
+		cd src
+		sh makealias ../src fcalias.h fcaliastail.h ../fontconfig/fontconfig.h ../src/fcdeprecate.h ../fontconfig/fcprivate.h
+		sh makealias ../src fcftalias.h fcftaliastail.h ../fontconfig/fontconfig.h ../src/fcdeprecate.h ../fontconfig/fcprivate.h
+	";
+
+	clean-command: "del /S /Q /A - src/fcalias.h src/fcaliastail.h src/fcftalias.h src/fcftaliastail.h > nul 2>NUL";
+}
