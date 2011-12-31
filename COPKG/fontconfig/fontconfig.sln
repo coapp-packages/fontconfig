@@ -8,6 +8,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fc-lang", "fc-lang\fc-lang.
 		{61AA3AC7-73C8-4B7D-9384-CFA98B017813} = {61AA3AC7-73C8-4B7D-9384-CFA98B017813}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fc-glyphname", "fc-glyphname\fc-glyphname.vcxproj", "{429A2394-C779-48E2-85A6-26D203647150}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -22,6 +24,10 @@ Global
 		{C6AB7DC0-DD4A-4D9A-86C4-5D920016F83B}.Debug|Win32.Build.0 = Debug|Win32
 		{C6AB7DC0-DD4A-4D9A-86C4-5D920016F83B}.Release|Win32.ActiveCfg = Release|Win32
 		{C6AB7DC0-DD4A-4D9A-86C4-5D920016F83B}.Release|Win32.Build.0 = Release|Win32
+		{429A2394-C779-48E2-85A6-26D203647150}.Debug|Win32.ActiveCfg = Debug|Win32
+		{429A2394-C779-48E2-85A6-26D203647150}.Debug|Win32.Build.0 = Debug|Win32
+		{429A2394-C779-48E2-85A6-26D203647150}.Release|Win32.ActiveCfg = Release|Win32
+		{429A2394-C779-48E2-85A6-26D203647150}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
