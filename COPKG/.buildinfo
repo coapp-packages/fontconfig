@@ -29,3 +29,30 @@ sh-files {
 
 	clean-command: "del /S /Q /A - src/fcalias.h src/fcaliastail.h src/fcftalias.h src/fcftaliastail.h src/fontconfig.def > nul 2>NUL";
 }
+
+vc10 {
+	compiler: vc10;
+
+	uses: sh-files=@".";
+	//uses: @"..\gnulib"; // commit 6dfd4bfd8561def63038171da6eb4ddd613349eb
+	uses: x86=@"..\libxml2";
+	uses: Win32=@"..\freetype";
+	
+	targets: {
+		"COPKG\fontconfig\Release\libfontconfig-1-vc100.dll",
+		"COPKG\fontconfig\Release\libfontconfig-1-vc100.lib",
+	};
+
+	build-command: @"
+		msbuild COPKG\fontconfig\fontconfig.sln /p:Configuration=Release
+	";
+
+	clean-command: @"
+		rmdir /S /Q COPKG\fontconfig\Release 2>NUL
+		rmdir /S /Q COPKG\fontconfig\fc-arch\Release 2>NUL
+		rmdir /S /Q COPKG\fontconfig\fc-glyphname\Release 2>NUL
+		rmdir /S /Q COPKG\fontconfig\fc-lang\Release 2>NUL
+		rmdir /S /Q COPKG\fontconfig\fccase\Release 2>NUL
+		rmdir /S /Q COPKG\fontconfig\lib\Release 2>NUL
+	";
+}
