@@ -41,6 +41,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)..\..\src;$(SolutionDir)..\..;$(SolutionDir);$(SolutionDir)..\..\..\gnulib\lib;$(IncludePath)</IncludePath>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -58,6 +60,26 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>$(TargetPath) $(SolutionDir)..\..\fc-case\CaseFolding.txt &lt; $(SolutionDir)..\..\fc-case\fccase.tmpl.h &gt; $(SolutionDir)..\..\fc-case\fccase.h</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Building fccase.h</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(SolutionDir)\..\..\fc-case\fccase.h</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(TargetPath);$(SolutionDir)\..\..\fc-case\CaseFolding.txt;$(SolutionDir)\..\..\fc-case\fccase.tmpl.h</Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -75,6 +97,26 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>$(TargetPath) $(SolutionDir)..\..\fc-case\CaseFolding.txt &lt; $(SolutionDir)..\..\fc-case\fccase.tmpl.h &gt; $(SolutionDir)..\..\fc-case\fccase.h</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Building fccase.h</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(SolutionDir)\..\..\fc-case\fccase.h</Outputs>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Inputs>$(TargetPath);$(SolutionDir)\..\..\fc-case\CaseFolding.txt;$(SolutionDir)\..\..\fc-case\fccase.tmpl.h</Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\fc-case\fc-case.c" />
